@@ -1,0 +1,42 @@
+.wish-aside {
+  height: auto;
+}
+
+.wish-category-list-sec {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  padding-top: 50px;
+}
+
+.wish-category {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  width: 100px;
+  margin: 10px;
+}
+
+.wish-category-img {
+  background-color: white;
+  width: 100px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.wish-category-img img {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.wish-category-title {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 10px;
+  text-transform: capitalize;
+}

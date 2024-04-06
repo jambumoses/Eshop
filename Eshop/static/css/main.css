@@ -1,0 +1,22 @@
+/* variables */
+@import url("variables.css");
+
+/* resetting css */
+@import url("reset.css");
+
+/* animations */
+@import url("animations.css");
+
+/* import other css */
+@import url("header.css");
+@import url("carousel.css");
+@import url("categories.css");
+@import url("category-sort.css");
+@import url("scrollProducts.css");
+@import url("shop-section.css");
+@import url("login.css");
+@import url("poster.css");
+@import url("./wish-category-list.css");
+@import url("cart.css");
+@import url("details.css");
+@import url("footer.css");

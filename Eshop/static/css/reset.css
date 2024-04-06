@@ -1,0 +1,20 @@
+* {
+  font-family: poppins, sans-serif;
+}
+
+html {
+  margin: 0px;
+  padding: 0px;
+  display: border-box;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  display: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}

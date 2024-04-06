@@ -1,0 +1,49 @@
+.categories-heading{
+    text-transform: capitalize;
+    font-size: 30px;
+    margin: 5%;
+    text-align: center;
+}
+
+.categories-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  background-color: whitesmoke;
+  margin: 0px 5%;
+  height: 200px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  height: 150px;
+  width: 150px;
+}
+
+.category-img {
+  background-color: transparent;
+  height: 110px;
+  width: 110px;
+  border-radius:10px;
+}
+
+.category-img img {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 10%;
+}
+
+.category-title {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+  margin-top: 10px;
+  padding: 0px 13px;
+  text-align: center;
+}

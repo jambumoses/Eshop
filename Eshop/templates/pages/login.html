@@ -1,0 +1,36 @@
+{% extends '../main.html' %} {% block content %}
+<!-- main context -->
+
+<main>
+  <section class="login-section">
+    <span
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      "
+      ><i style="font-size: 20px" class="fa fa-user"></i
+    ></span>
+    <h1>login</h1>
+    <form action="" method="post">
+      <table border="0" cellspacing="5">
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td><input type="email" name="" id="" /></td>
+        </tr>
+        <tr>
+          <td><label for="password">Password</label></td>
+          <td><input type="password" name="" id="" /></td>
+        </tr>
+      </table>
+    </form>
+  </section>
+</main>
+
+<!-- end of context -->
+{% endblock content %}

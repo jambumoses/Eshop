@@ -1,0 +1,90 @@
+# tables
+-users
+-logins
+-offers
+-categories
+-products
+-featured
+-wishlist
+-cart
+
+
+# [categories]
+shoes
+    sneakers
+    gentles
+    pushins
+
+gadgets
+    computers
+    phones
+
+suppermarket
+    golacies
+    drinks
+
+kids
+    toys
+    shoes
+    clothings
+
+sport
+    basket ball
+    training
+    football
+    running
+    ruby
+
+
+
+
+
+
+#product information
+[
+    id
+    title
+    category
+    brand
+    sport
+    description
+    quantity
+    price
+    currency
+    color
+    offers_title
+    offers_id
+    gender
+    kids_type
+    uploaded_time
+    updated_time
+    
+    ratings: 1-5
+
+    reviews:[
+        name
+        title
+        comment
+        ratings
+    ]
+
+    img
+    imgs[1,2,3]
+
+    size:{
+        shoes,
+        clothings,
+        
+    }
+]
+
+
+#categories information
+[
+    id
+    title
+    img
+    description
+    uploaded_time
+    updated_time
+]
