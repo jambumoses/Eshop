@@ -1,0 +1,26 @@
+<section class="scroll-products">
+  <span class="scroll-products-title">
+    <h5>{{ title }}</h5>
+    <div>
+      <span><i class="fa fa-angle-left"></i></span>
+      <span><i class="fa fa-angle-right"></i></span>
+    </div>
+  </span>
+
+  <section class="scroll-products-items-container">
+
+    {% for product in products %}
+
+    <div class="scroll-products-item">
+      <a href="/product/{{product.id}}" style="text-decoration: none;" class="scroll-products-item-img"><img src="{{product.img.url}}" style="object-fit: contain;" alt="" /></a>
+      <span class="scroll-products-item-title"
+        >{{product.title}}</span
+      >
+      <span class="scroll-products-item-category">{{product.gender}}'s {{product.brand}}</span>
+      <span class="scroll-products-item-price">{{product.currency}}{{product.price}}</span>
+    </div>
+
+    {% endfor %}
+
+  </section>
+</section>

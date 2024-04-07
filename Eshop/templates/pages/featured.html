@@ -41,197 +41,38 @@
   </div>
   <!-- </div> -->
 
-  <section class="category-sort">
-    <h2>shop by sports</h2>
+  <!-- clothings -->
+  {% include '../components/products_scroll.html' with title='trending clothings and sales' products=clothings %}
 
-    <div class="category-sort-sec">
-      <div class="category-sort-arrow-sec">
-        <i class="fa fa-arrow-right"></i>
-        <a href=""><button type="button">see more</button></a>
-      </div>
-
-      <section class="category-container">
-        <div class="category-sort-item">
-          <span class="category-sort-item-img"><img src="" alt="" /></span>
-          <span class="category-sort-item-type">basketball</span>
-          <span class="category-sort-item-title"
-            >styles made for your game.</span
-          >
-        </div>
-
-        <div class="category-sort-item">
-          <span class="category-sort-item-img"><img src="" alt="" /></span>
-          <span class="category-sort-item-type">running</span>
-          <span class="category-sort-item-title"
-            >everything you'll need for every mile.</span
-          >
-        </div>
-
-        <div class="category-sort-item">
-          <span class="category-sort-item-img"><img src="" alt="" /></span>
-          <span class="category-sort-item-type">training</span>
-          <span class="category-sort-item-title"
-            >styles for gym workouts, bootcamps, spin & more.</span
-          >
-        </div>
-      </section>
-    </div>
-  </section>
+  <!-- featured -->
+  {% include '../components/featured_sport.html' with title='shop by sports' products=featuredProducts %}
 
   <!-- categories -->
-  <h2 class="categories-heading">categories</h2>
-  <section class="categories-section">
-    <div class="category-item">
-      <span class="category-img"><img src="" alt="" /></span>
-      <span class="category-title">accessories</span>
-    </div>
+  {% include '../components/categories_scroll.html' with title='categories' categories=allCategories %}
 
-    <div class="category-item">
-      <span class="category-img"><img src="" alt="" /></span>
-      <span class="category-title">sneakers</span>
-    </div>
+  <!-- trending for men -->
+  {% include '../components/products_scroll.html' with title='trending for men' products=topMen %}
+  
+  <!-- trending for women -->
+  {% include '../components/products_scroll.html' with title='trending for women' products=topWomen %}
+  
+  <!-- popular right now -->
+  {% include '../components/products_scroll.html' with title='popular right now' products=allProducts %}
 
-    <div class="category-item">
-      <span class="category-img"><img src="" alt="" /></span>
-      <span class="category-title">kids</span>
-    </div>
+  <!-- poster -->
+  {% include '../components/poster.html' with posters=allPosters %}
 
-    <div class="category-item">
-      <span class="category-img"><img src="" alt="" /></span>
-      <span class="category-title">gadgets</span>
-    </div>
+  <!-- top supermarket sales -->
+  {% include '../components/products_scroll.html' with title='top supermarket sales' products=supermarket %}
 
-    <div class="category-item">
-      <span class="category-img"><img src="" alt="" /></span>
-      <span class="category-title">clothings</span>
-    </div>
+<!-- trending kids accessories -->
+  {% include '../components/products_scroll.html' with title='trending kids accessories' products=kids %}
 
-    <div class="category-item">
-      <span class="category-img"><img src="" alt="" /></span>
-      <span class="category-title">supermarket</span>
-    </div>
-  </section>
+  <!-- top gadget on sales -->
+  {% include '../components/products_scroll.html' with title='top gadget on sales' products=gadgets %}
 
-  <section class="scroll-products">
-    <span class="scroll-products-title">
-      <h5>popular right now</h5>
-      <div>
-        <span><i class="fa fa-angle-left"></i></span>
-        <span><i class="fa fa-angle-right"></i></span>
-      </div>
-    </span>
 
-    <section class="scroll-products-items-container">
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
 
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-    </section>
-  </section>
-
-  <section class="scroll-products">
-    <span class="scroll-products-title">
-      <h5>popular right now</h5>
-      <div>
-        <span><i class="fa fa-angle-left"></i></span>
-        <span><i class="fa fa-angle-right"></i></span>
-      </div>
-    </span>
-
-    <section class="scroll-products-items-container">
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-    </section>
-  </section>
-
-  <section class="scroll-products">
-    <span class="scroll-products-title">
-      <h5>popular right now</h5>
-      <div>
-        <span><i class="fa fa-angle-left"></i></span>
-        <span><i class="fa fa-angle-right"></i></span>
-      </div>
-    </span>
-
-    <section class="scroll-products-items-container">
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-    </section>
-  </section>
-
-  <div class="poster-section">
-    <img src="" alt="" />
-  </div>
 </main>
 
 <!-- end of context -->

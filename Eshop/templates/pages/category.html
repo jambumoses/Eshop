@@ -1,0 +1,25 @@
+{% extends '../main.html' %} {% block content %}
+
+<main>
+  <section class="shop-section">
+    <!-- filter -->
+    {% include '../components/filter.html' with title=categoryName
+    information=menProducts %}
+
+    <!-- -========================================================================- -->
+
+    <main>
+      <!-- filter navigation -->
+      {% include '../components/filter_nav.html' %}
+
+      <!-- items -->
+      {% include '../components/ProductsContainer.html' with information=categoryProducts %}
+
+      <!-- more button -->
+      <!-- <div class="shop-items-loading-section">loading...</div> -->
+    </main>
+  </section>
+</main>
+
+<!-- end of context -->
+{% endblock content %}

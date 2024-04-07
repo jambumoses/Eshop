@@ -1,3 +1,5 @@
+db.sqlite3
+
 # tables
 -users
 -logins
@@ -7,6 +9,23 @@
 -featured
 -wishlist
 -cart
+
+
+Accessories
+
+Sneakers
+
+Kids
+
+Gadgets
+
+Clothings
+
+Supermarket
+
+
+
+
 
 
 # [categories]
@@ -74,7 +93,6 @@ sport
     size:{
         shoes,
         clothings,
-        
     }
 ]
 

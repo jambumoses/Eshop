@@ -1,0 +1,30 @@
+<section class="cart-bag-container">
+    {% for item in items %}
+
+    <div class="cart-bag-item">
+      <span class="cart-bag-item-img"
+        ><img src="{{item.Product.img.url}}" style="background-color: whitesmoke; object-fit: contain;" alt="" />
+        <span class="cart-bag-item-price">{{item.Product.currency}}{{item.Product.price}}</span></span
+      >
+      <div>
+        <a href="/product/{{item.Product.id}}" class="cart-bag-item-title"
+          >{{item.Product.title}}</a
+        >
+        <span class="cart-bag-item-description"
+          >{{item.Product.description}}</span
+        >
+        <span class="cart-bag-item-qantity"
+          ><i
+            class="fa fa-minus"
+            style="font-size: 10px; cursor: pointer; margin-right: 10px"
+          ></i>
+          <span style="color: orange">{{item.Product.quantity}}</span>
+          <i
+            style="font-size: 10px; cursor: pointer; margin-left: 10px"
+            class="fa fa-add"
+          ></i
+        ></span>
+      </div>
+    </div>
+    {% endfor %}
+  </section>

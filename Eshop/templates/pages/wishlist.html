@@ -4,256 +4,69 @@
 <main>
   <section class="shop-section">
     <main>
-      <!-- filters -->
-      <div
-        class="shop-filter-main-options"
-        style="
-          flex-direction: row-reverse;
-          justify-content: space-between;
-          padding-left: 3%;
-        "
-      >
-        <!-- <span>hide filters <i class="fa fa-filter"></i></span> -->
-        <span
-          >sort <i style="margin-left: 5px" class="fa fa-angle-down"></i
-        ></span>
-        <span style="font-family: var(--fontPoppins)"
-          >wishlist
-          <i style="color: orange; margin-left: 5px" class="fa fa-heart"></i
-        ></span>
+
+      {% if request.user.is_authenticated %}
+
+            <!-- filters -->
+            <div
+            class="shop-filter-main-options"
+            style="
+              flex-direction: row-reverse;
+              justify-content: space-between;
+              padding-left: 3%;
+            "
+          >
+            <!-- <span>hide filters <i class="fa fa-filter"></i></span> -->
+            <span
+              >sort <i style="margin-left: 5px" class="fa fa-angle-down"></i
+            ></span>
+            <span style="font-family: var(--fontPoppins)"
+              >wishlist
+              <i style="color: orange; margin-left: 5px" class="fa fa-heart"></i
+            ></span>
+          </div>
+    
+          <!-- items -->
+          {% include '../components/wishlist.html' with items=wishlistItems %}
+    
+          <!-- more button -->
+          <!-- <div class="shop-items-loading-section">loading...</div> -->
+
+      {% endif %}
+
+
+      {% if not request.user.is_authenticated %}
+      <div class="cart-favorites" style="margin: 20px 5%;padding: 5%;border-radius: 10px; text-align: center; background-color: whitesmoke;">
+        <h2>favorites</h2>
+        <p>
+          want to view your favorites? <br />
+          <a href="{% url 'register' %}">Register now</a> or
+          <a href="{% url 'login' %}">Sign-in</a>
+        </p>
       </div>
 
-      <!-- items -->
-      <section class="shop-container">
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
 
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
+      <div class="cart-time-ads" style="margin: 0px 5%; display: flex;flex-direction: column; align-items: center; width: 50%;margin: 50px auto;">
+        <h4>Love sport sale: Ends 2.6s</h4>
+        <p>sign in and use code HEART for an extra 20% off select styles.</p>
+      </div>
+      {% endif %}
 
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-
-        <div class="shop-item">
-          <a href="" class="shop-item-img"><img src="" alt="" /></a>
-          <span class="shop-item-offer">best sellers</span>
-          <span class="shop-item-title">nike air max 1</span>
-          <span class="shop-item-category">men's shoes</span>
-          <span class="shop-item-color">7 colors</span>
-          <span class="shop-item-price">$140</span>
-        </div>
-      </section>
-      <!-- more button -->
-      <div class="shop-items-loading-section">loading...</div>
     </main>
 
     <!-- -========================================================================- -->
+    <!-- categories -->
+    
+    {% if request.user.is_authenticated %}
+      {% include '../components/wishlist_categories.html' with categories=allCategories %}
+    {% endif %}
 
-    <aside class="wish-aside">
-      <div
-        class="shop-pick-today"
-        style="
-          flex-direction: row-reverse;
-          background-color: orange;
-          color: white;
-        "
-      >
-        <span class="head">categories</span>
-        <span><i class="fa fa-bars"></i></span>
-      </div>
 
-      <section class="wish-category-list-sec">
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">sneakers</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">clothings</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">supermarket</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">sneakers</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">clothings</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">supermarket</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">sneakers</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">clothings</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">supermarket</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">sneakers</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">clothings</span>
-        </div>
-
-        <div class="wish-category">
-          <a href="" class="wish-category-img"><img src="" alt="" /></a>
-          <span class="wish-category-title">supermarket</span>
-        </div>
-      </section>
-    </aside>
   </section>
 
-  <section class="scroll-products">
-    <span class="scroll-products-title">
-      <h5>popular right now</h5>
-      <div>
-        <span><i class="fa fa-angle-left"></i></span>
-        <span><i class="fa fa-angle-right"></i></span>
-      </div>
-    </span>
+  <!-- top monthly trends -->
+  {% include '../components/products_scroll.html' with title='top monthly trends' products=allProducts %}
 
-    <section class="scroll-products-items-container">
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-    </section>
-  </section>
 </main>
 
 <!-- end of context -->

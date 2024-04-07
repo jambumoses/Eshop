@@ -4,8 +4,8 @@
     <div class="header-navigations">
       <nav>
         <span><a href="/">new & featured</a></span>
-        <span><a href="/men">men</a></span>
-        <span><a href="/women">women</a></span>
+        <span><a href="{% url 'men'%}">men</a></span>
+        <span><a href="{% url 'women' %}">women</a></span>
       </nav>
 
       <span class="nav-search">
@@ -17,12 +17,13 @@
         </form>
       </span>
 
-      <span class="nav-ico"
-        ><a href="/wishlist"><i class="fa fa-heart"></i></a
+      <span class="nav-ico nav-wish-ico"
+        ><a href="{% url 'wishlist' %}">
+          <i class="fa fa-heart"></i> <span>2</span></a
       ></span>
 
       <span class="nav-ico nav-cart-ico"
-        ><a href="/cart"
+        ><a href="{% url 'cart' %}"
           ><i class="fa fa-shopping-bag"></i> <span>5</span></a
         ></span
       >

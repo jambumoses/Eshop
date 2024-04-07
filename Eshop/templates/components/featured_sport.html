@@ -1,0 +1,25 @@
+<section class="category-sort">
+    <h2>{{title}}</h2>
+
+    <div class="category-sort-sec">
+      <div class="category-sort-arrow-sec">
+        <i class="fa fa-arrow-right"></i>
+        <a href=""><button type="button">see more</button></a>
+      </div>
+
+      <section class="category-container">
+
+        {% for featured in featuredProducts%}
+        <div class="category-sort-item">
+          <span class="category-sort-item-img" style="background-color: grey;"><img src="{{featured.img.url}}" alt="" /></span>
+          <span class="category-sort-item-type">{{featured.sport}}</span>
+          <span class="category-sort-item-title"
+            >{{featured.sport_headline}}</span
+          >
+        </div>
+
+        {% endfor %}
+        
+      </section>
+    </div>
+  </section>

@@ -5,121 +5,30 @@
   <section class="cart-section">
     <!-- cart items -->
     <main>
-      <h2>shopping bag</h2>
 
-      <section class="cart-bag-container">
-        <div class="cart-bag-item">
-          <span class="cart-bag-item-img"
-            ><img src="" alt="" />
-            <span class="cart-bag-item-price">$140</span></span
-          >
-          <div>
-            <a href="./product-details.html" class="cart-bag-item-title"
-              >Nike Air Max 1</a
-            >
-            <span class="cart-bag-item-description"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              aspernatur dolore exercitationem animi, sint error nulla...</span
-            >
-            <span class="cart-bag-item-qantity"
-              ><i
-                class="fa fa-minus"
-                style="font-size: 10px; cursor: pointer; margin-right: 10px"
-              ></i>
-              <span style="color: orange">5</span>
-              <i
-                style="font-size: 10px; cursor: pointer; margin-left: 10px"
-                class="fa fa-add"
-              ></i
-            ></span>
-          </div>
-        </div>
+      {% if not request.user.is_authenticated %}
+      <div class="cart-member-ads" style="margin-top: 10px;">
+        <h2>members get free shipping on orders $50+</h2>
+        <p>
+          Register today for fast free shipping on orders $50+
+          <a href="{% url 'register' %}">Register now</a> or
+          <a href="{% url 'login' %}">Sign-in</a>
+        </p>
+      </div>
+      {% endif %}
 
-        <div class="cart-bag-item">
-          <span class="cart-bag-item-img"
-            ><img src="" alt="" />
-            <span class="cart-bag-item-price">$140</span></span
-          >
-          <div>
-            <a href="./product-details.html" class="cart-bag-item-title"
-              >Nike Air Max 1</a
-            >
-            <span class="cart-bag-item-description"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              aspernatur dolore exercitationem animi, sint error nulla...</span
-            >
-            <span class="cart-bag-item-qantity"
-              ><i
-                class="fa fa-minus"
-                style="font-size: 10px; cursor: pointer; margin-right: 10px"
-              ></i>
-              <span style="color: orange">5</span>
-              <i
-                style="font-size: 10px; cursor: pointer; margin-left: 10px"
-                class="fa fa-add"
-              ></i
-            ></span>
-          </div>
-        </div>
+      <h2>shopping bag</h2>   
+      
+      <p class="no-bag" style="margin: 50px 0px;">
+        There are no items in your bag
+        <a href="" style="font-size: 20px; text-transform: capitalize; padding-left: 5%;">
+          shope now
+        </a>
+      </p>
 
-        <div class="cart-bag-item">
-          <span class="cart-bag-item-img"
-            ><img src="" alt="" />
-            <span class="cart-bag-item-price">$140</span></span
-          >
-          <div>
-            <a href="./product-details.html" class="cart-bag-item-title"
-              >Nike Air Max 1</a
-            >
-            <span class="cart-bag-item-description"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              aspernatur dolore exercitationem animi, sint error nulla...</span
-            >
-            <span class="cart-bag-item-qantity"
-              ><i
-                class="fa fa-minus"
-                style="font-size: 10px; cursor: pointer; margin-right: 10px"
-              ></i>
-              <span style="color: orange">5</span>
-              <i
-                style="font-size: 10px; cursor: pointer; margin-left: 10px"
-                class="fa fa-add"
-              ></i
-            ></span>
-          </div>
-        </div>
+      {% include '../components/cart_items.html' with items=cartItems %}
 
-        <div class="cart-bag-item">
-          <span class="cart-bag-item-img"
-            ><img src="" alt="" />
-            <span class="cart-bag-item-price">$140</span></span
-          >
-          <div>
-            <a href="./product-details.html" class="cart-bag-item-title"
-              >Nike Air Max 1</a
-            >
-            <span class="cart-bag-item-description"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              aspernatur dolore exercitationem animi, sint error nulla...</span
-            >
-            <span class="cart-bag-item-qantity"
-              ><i
-                class="fa fa-minus"
-                style="font-size: 10px; cursor: pointer; margin-right: 10px"
-              ></i>
-              <span style="color: orange">5</span>
-              <i
-                style="font-size: 10px; cursor: pointer; margin-left: 10px"
-                class="fa fa-add"
-              ></i
-            ></span>
-          </div>
-        </div>
-      </section>
-
-      <!-- 
-        <p class="no-bag">There are no items in your bag</p>
--->
+      {% if not request.user.is_authenticated %}
       <div class="cart-favorites">
         <h2>favorites</h2>
         <p>
@@ -128,15 +37,7 @@
           <a href="./login.html">Sign-in</a>
         </p>
       </div>
-
-      <div class="cart-member-ads">
-        <h2>members get free shipping on orders $50+</h2>
-        <p>
-          Register today for fast free shipping on orders $50+
-          <a href="./register.html">Register now</a> or
-          <a href="./login.html">Sign-in</a>
-        </p>
-      </div>
+      {% endif %}
 
       <div class="cart-time-ads">
         <h4>Love sport sale: Ends 2.6s</h4>
@@ -173,44 +74,9 @@
     </aside>
   </section>
 
-  <section class="scroll-products">
-    <span class="scroll-products-title">
-      <h5>popular right now</h5>
-      <div>
-        <span><i class="fa fa-angle-left"></i></span>
-        <span><i class="fa fa-angle-right"></i></span>
-      </div>
-    </span>
+  <!-- popular right now -->
+  {% include '../components/products_scroll.html' with title='popular right now' products=allProducts %}
 
-    <section class="scroll-products-items-container">
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-    </section>
-  </section>
 </main>
 
 <!-- end of context -->

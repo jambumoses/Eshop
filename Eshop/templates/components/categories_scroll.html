@@ -1,0 +1,14 @@
+  <!-- categories -->
+  <h2 class="categories-heading">{{title}}</h2>
+  <section class="categories-section">
+  
+    {% for category in categories %}
+    <div class="category-item">
+      <a href="/category/{{category.title}}" class="category-img" style="text-decoration: none;"><img src="{{ category.img.url }}" style="object-fit: contain;" alt="" /></a>
+      <span class="category-title">{{ category.title }}</span>
+    </div>
+    {% endfor %}
+  
+  </section>
+  
+

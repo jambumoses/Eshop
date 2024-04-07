@@ -2,6 +2,15 @@
 <!-- main context -->
 
 <main>
+  {% if request.user.is_authenticated %}
+ 
+   <section style="height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <span><i class="fa fa-home"></i></span>
+    <a href="{% url 'dashboard' %}" style="text-decoration: none; text-transform: capitalize;">dashboard</a>
+   </section>
+ 
+  {% else %}
+ 
   <section class="login-section">
     <span
       style="
@@ -18,18 +27,62 @@
     ></span>
     <h1>login</h1>
     <form action="" method="post">
+      {% csrf_token %}
       <table border="0" cellspacing="5">
         <tr>
-          <td><label for="email">Email</label></td>
-          <td><input type="email" name="" id="" /></td>
+          <td><label for="username">Username</label></td>
+          <td>
+            <input
+              type="text"
+              name="username"
+              id=""
+              required
+              style="font-size: 13px"
+            />
+          </td>
         </tr>
         <tr>
           <td><label for="password">Password</label></td>
-          <td><input type="password" name="" id="" /></td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              id=""
+              required
+              style="font-size: 13px"
+            />
+          </td>
         </tr>
       </table>
+
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          padding-top: 40px;
+        "
+      >
+        <button
+          type="submit"
+          style="
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            padding: 5px 15px;
+            text-transform: capitalize;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: initial;
+          "
+        >
+          login
+        </button>
+      </div>
     </form>
   </section>
+
+  {% endif %}
 </main>
 
 <!-- end of context -->

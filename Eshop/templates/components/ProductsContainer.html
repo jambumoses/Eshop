@@ -1,0 +1,19 @@
+<section class="shop-container">
+
+    {% for item in information %}
+
+    <div class="shop-item">
+      <a href="/product/{{item.id}}" class="shop-item-img"
+        ><img src="{{item.img.url}}" alt=""
+      /></a>
+      <span class="shop-item-offer">{{item.offers_title}}</span>
+      <span class="shop-item-title">{{item.title}}</span>
+      <span class="shop-item-category">{{item.gender}}'s {{item.brand}}</span>
+      <!-- <span class="shop-item-color">7 colors</span> -->
+      <span class="shop-item-price">{{item.currency}}{{item.price}}</span>
+    </div>
+
+    {% endfor %}
+
+
+  </section>

@@ -153,15 +153,15 @@ header {
   text-decoration: none;
 }
 
-.nav-cart-ico {
+.nav-cart-ico, .nav-wish-ico {
   position: relative;
 }
 
-.nav-cart-ico a {
+.nav-cart-ico a , .nav-wish-ico a{
   position: relative;
 }
 
-.nav-cart-ico a span {
+.nav-cart-ico a span, .nav-wish-ico a span{
   position: absolute;
   display: flex;
   flex-direction: column;

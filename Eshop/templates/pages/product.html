@@ -5,35 +5,44 @@
 <main>
   <section class="details-section">
     <main>
+
+      {% if not request.user.is_authenticated %}
+
       <section>
         <div class="cart-member-ads">
           <h2>members get free shipping on orders $50+</h2>
           <p>
             Register today for fast free shipping on orders $50+
-            <a href="./register.html">Register now</a> or
-            <a href="./login.html">Sign-in</a>
+            <a href="{% url 'register' %}">Register now</a> or
+            <a href="{% url 'login' %}">Sign-in</a>
           </p>
         </div>
       </section>
 
-      <span>Men's Shoes</span>
+      {% endif %}
 
-      <h2>Air Jordan3 Retro Craft "Ivory"</h2>
+      {% if request.user.is_authenticated %}
+        <small style="display: block; color: white; background-color: orange; padding: 5px 15px; border-radius: 5px; text-transform: capitalize; margin: 10px 0px;">{{item.offers_title}}</small>
+      
+        <small style="color: grey; text-transform: capitalize;">{{item.sport}}</small>
+        <h3 style="text-transform: capitalize; font-weight: bold; margin-bottom: 40px;">{{item.sport_headline}}</h3>
+      {% endif %}
+
+      <span style="text-transform: capitalize;">{{item.gender}}'s {{item.brand}}</span>
+
+      <h2 style="text-transform: capitalize;">{{item.title}}</h2>
       <p style="font-size: inherit">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque
-        inventore, enim illo accusamus repellendus corporis aut sapiente velit
-        nobis sunt quibusdam consequatur nemo error, maxime optio, consequuntur
-        rerum repellat beatae.
+        {{item.description}}
       </p>
 
-      <p style="color: grey; font-size: 15px">Sneakers</p>
+      <p style="color: grey; font-size: 15px; text-transform: capitalize;">{{item.category}}</p>
 
       <span style="display: block; font-weight: bold; font-size: 20px"
-        >$210</span
+        >{{item.currency}}{{item.price}}</span
       >
 
       <div style="margin-top: 20px">
-        <a href="" style="text-decoration: none"
+        <a href="/addcart/{{item.id}}" style="text-decoration: none"
           ><button
             style="
               text-transform: capitalize;
@@ -51,7 +60,7 @@
             add to cart
           </button></a
         >
-        <a href="" style="text-decoration: none"
+        <a href="/addwishlist/{{item.id}}" style="text-decoration: none"
           ><button
             style="
               text-transform: capitalize;
@@ -73,18 +82,22 @@
     </main>
 
     <aside>
-      <span class="details-img"><img src="" alt="" /></span>
+      <span class="details-img"><img src="{{item.img.url}}" alt="" /></span>
     </aside>
   </section>
+
+  {% if not request.user.is_authenticated %}
 
   <div class="cart-favorites" style="margin: 5%; text-align: center">
     <h2>favorites</h2>
     <p>
       want to view your favorites? <br />
-      <a href="./register.html">Register now</a> or
-      <a href="./login.html">Sign-in</a>
+      <a href="{% url 'register' %}">Register now</a> or
+      <a href="{% url 'login' %}">Sign-in</a>
     </p>
   </div>
+
+  {% endif %}
 
   <div class="cart-time-ads" style="margin: 0px 5%">
     <h4>Love sport sale: Ends 2.6s</h4>
@@ -92,44 +105,12 @@
   </div>
   <!-- </main> -->
 
-  <section class="scroll-products">
-    <span class="scroll-products-title">
-      <h5>popular right now</h5>
-      <div>
-        <span><i class="fa fa-angle-left"></i></span>
-        <span><i class="fa fa-angle-right"></i></span>
-      </div>
-    </span>
+  <!-- related products -->
 
-    <section class="scroll-products-items-container">
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
 
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
 
-      <div class="scroll-products-item">
-        <span class="scroll-products-item-img"><img src="" alt="" /></span>
-        <span class="scroll-products-item-title"
-          >air jordan3 retro craft "Ivory"</span
-        >
-        <span class="scroll-products-item-category">men's shoes</span>
-        <span class="scroll-products-item-price">$210</span>
-      </div>
-    </section>
-  </section>
+  {% include '../components/products_scroll.html' with title="related products" products=allProducts %}
+
 </main>
 
 <!-- end of context -->
