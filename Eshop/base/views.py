@@ -17,6 +17,9 @@ Posters_ = Posters.objects.all()
 Wishlist_ = Wishlist.objects.all()
 CartItems_ = Cart.objects.all()
 
+cartNo = len(CartItems_)
+wishNo = len(Wishlist_)
+
 # Create your views here.
 def home(request):
 
@@ -36,11 +39,13 @@ def home(request):
 
         if cat.title == 'supermarket':
             supermarket_ID = cat.id
-        
+
 
     
     return render(request, 'pages/featured.html', 
     {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
         'allCategories': Categories_[:6],
         'allProducts': Products_[:5],
         'allPosters': Posters_,
@@ -59,6 +64,8 @@ def categoryItems(request, title):
     
     return render(request, "pages/category.html",
     {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
         'categoryName': title,
         'categoryProducts': Products_,
         'allCategories': Categories_,
@@ -74,6 +81,8 @@ def men(request):
 
     return render(request, "pages/men.html",
     {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
         'allCategories': Categories_,
         'allProducts': Products_,
         'menProducts': menProducts,
@@ -85,6 +94,8 @@ def women(request):
 
     return render(request, "pages/women.html",
         {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
         'allCategories': Categories_,
         'allProducts': Products_,
         'womenProducts': womenProducts,
@@ -95,6 +106,8 @@ def wishlist(request):
 
     return render(request, "pages/wishlist.html",
         {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
         'allCategories': Categories_[:6],
         'allProducts': Products_[:5],
         'wishlistItems': Wishlist_,
@@ -104,6 +117,8 @@ def wishlist(request):
 def cart(request):
     return render(request, "pages/cart.html",
         {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
         'allCategories': Categories_,
         'allProducts': Products_[:5],
         'allPosters': Posters_,
@@ -124,6 +139,8 @@ def product(request, id):
 
     return render(request, "pages/product.html",
         {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
         'allCategories': Categories_[:6],
         'allProducts': relatedProducts[:5],
         'allPosters': Posters_,
@@ -152,6 +169,8 @@ def login(request):
 
     return render(request, "pages/login.html",
         {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
         'allCategories': Categories_,
         'allProducts': Products_,
         'allPosters': Posters_,
@@ -167,6 +186,8 @@ def logoutUser(request):
 def register(request):
     return render(request, "pages/register.html",
         {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
         'allCategories': Categories_,
         'allProducts': Products_,
         'allPosters': Posters_,
