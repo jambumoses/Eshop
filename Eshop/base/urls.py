@@ -8,6 +8,7 @@ urlpatterns = [
     path('wishlist/', views.wishlist, name="wishlist"),
     path('cart/', views.cart, name="cart"),
     path('product/<str:id>/', views.product, name="product"),
+    path('category/', views.category_products, name="allproducts"),
     path('category/<str:title>/', views.categoryItems, name="category"),
 
     path('addwishlist/<str:id>/', views.addwishlist, name="addwishlist"),
@@ -17,4 +18,6 @@ urlpatterns = [
     path('login/', views.login, name="login"),
     path('register/', views.register, name="register"),
     path('logout/', views.logoutUser, name="logout"),
+
+    path('spyder/', views.spyderView, name='spyder')
 ]

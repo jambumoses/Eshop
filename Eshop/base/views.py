@@ -60,14 +60,41 @@ def home(request):
     }
     )
 
+def category_products(request):
+    return render(request, "pages/category.html",
+    {
+        'cartNo': cartNo,
+        'wishNo': wishNo,
+        'categoryProducts': Products.objects.all(),
+        'allCategories': Categories_,
+        'allProducts': Products_,
+        'wishlistItems': Wishlist_,
+        'cartItems': CartItems_,
+    }
+    )
+
+
 def categoryItems(request, title):
+
+    myCategory_id = 0
+
+    if title is not '':       
+        for myCategory in Categories_:
+            if myCategory.title == title:
+                myCategory_id = myCategory.id
     
+        categoryProducts = Products.objects.filter(category=myCategory_id)
+    
+    if title == 'all':       
+        categoryProducts = Products.objects.all
+
+
     return render(request, "pages/category.html",
     {
         'cartNo': cartNo,
         'wishNo': wishNo,
         'categoryName': title,
-        'categoryProducts': Products_,
+        'categoryProducts': categoryProducts,
         'allCategories': Categories_,
         'allProducts': Products_,
         'wishlistItems': Wishlist_,
@@ -204,3 +231,26 @@ def addwishlist(request, id):
 @login_required(login_url="login")
 def dashboard(request):
     return render(request)
+
+
+
+def spyderView(request):
+    context = [
+        {
+            'img': '',
+            'description': 'love you soo much ',
+        },
+                {
+            'img': '',
+            'description': 'welcome to the party ',
+        },
+                {
+            'img': '',
+            'description': 'leave the party the popo is coming',
+        },
+                {
+            'img': '',
+            'description': 'their a showcase going down at william street',
+        }
+    ]
+    return render(request, "pages/spyder.html", {'items': context})

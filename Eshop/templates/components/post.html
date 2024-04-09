@@ -1,0 +1,24 @@
+
+{% load static %}
+
+<div style="display: flex; flex-direction: column; width: 250px; background-color: whitesmoke; padding: 10px; border-radius: 10px; margin: 20px;">
+    <span style="width: 100%; height: 200px; border-radius: 5px; background-color: white;"><img style="width: 100%; height: 100%; object-fit: contain;" src="{% static 'img/berries.png' %}" alt=""></span>
+    <span style="margin: 10px 0px;">
+        <i style="color: skyblue; font-size: 13px;" class="fa fa-heart"></i>
+        <i style="color: skyblue; font-size: 13px;" class="fa fa-thumbs-up"></i>
+        <i style="color: skyblue; font-size: 13px;" class="fa fa-envelope"></i>
+    </span>
+    <span>
+        <h5 style="font-size: 15px; text-transform: capitalize; font-weight: bold">comment</h5>
+        <p style="font-size: 13px;">
+            {{data.description}}
+        </p>
+    </span>
+    <span>
+        <i style="color: orange; font-size: 13px;" class="fa fa-star"></i>
+        <i style="color: orange; font-size: 13px;" class="fa fa-star"></i>
+        <i style="color: orange; font-size: 13px;" class="fa fa-star"></i>
+        <i style="color: orange; font-size: 13px;" class="fa fa-star"></i>
+        <i style="color: black; font-size: 13px;" class="fa fa-star"></i>
+    </span>
+</div>

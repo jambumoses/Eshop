@@ -1,0 +1,12 @@
+{% extends '../main.html' %}
+{% block content %}
+
+<section style="display: flex; justify-content: space-around; flex-wrap: wrap; margin: 5%;">
+
+{% for item in items %}
+    {% include '../components/post.html' with data=item %}
+{% endfor %}
+
+</section>
+
+{% endblock content %}
